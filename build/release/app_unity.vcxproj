@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F3F045A9-9720-31DC-BDBC-205508DBEAF6}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>app_unity</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="do_not_import_user.props" Condition="exists('do_not_import_user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">app_unity.dir\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|Win32'">app</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='release|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='release|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\ccode\coolq-cpp-sdk\src;D:\ccode\coolq-cpp-sdk\vcpkg\installed\x86-windows-static-custom\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;NOMINMAX;APP_ID="com.gyp.groupmanager";CMAKE_INTDIR="release";app_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;NOMINMAX;APP_ID=\"com.gyp.groupmanager\";CMAKE_INTDIR=\"release\";app_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\ccode\coolq-cpp-sdk\src;D:\ccode\coolq-cpp-sdk\vcpkg\installed\x86-windows-static-custom\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\ccode\coolq-cpp-sdk\src;D:\ccode\coolq-cpp-sdk\vcpkg\installed\x86-windows-static-custom\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+powershell -noprofile -executionpolicy Bypass -file D:/ccode/coolq-cpp-sdk/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary D:/ccode/coolq-cpp-sdk/build/release/release/app.dll -installedDir D:/ccode/coolq-cpp-sdk/vcpkg/installed/x86-windows-static-custom/bin -OutVariable out
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\vcpkg\installed\x86-windows-static-custom\lib\libiconv.lib;..\..\vcpkg\installed\x86-windows-static-custom\lib\libcharset.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCMT;LIBCD;LIBCMTD;MSVCRTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/ccode/coolq-cpp-sdk/build/release/release/app.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/ccode/coolq-cpp-sdk/build/release/release/app.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\334e432425a45fbf58a0c3e136b2f701\app_CXX_unity_0_1.cxx.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Generating CXX unity source D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_0_1.cxx</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|Win32'">setlocal
+cd D:\ccode\coolq-cpp-sdk
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCOTIRE_BUILD_TYPE:STRING=release -P D:/ccode/coolq-cpp-sdk/cmake/Modules/cotire.cmake unity D:/ccode/coolq-cpp-sdk/build/release/app_CXX_cotire.cmake D:/ccode/coolq-cpp-sdk/build/release/$(Configuration)/cotire/app_CXX_unity_0_1.cxx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:/ccode/coolq-cpp-sdk/build/release/CMakeFiles/334e432425a45fbf58a0c3e136b2f701/app_CXX_unity_0_1.cxx.rule;D:\ccode\coolq-cpp-sdk\build\release\app_CXX_cotire.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_0_1.cxx</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\334e432425a45fbf58a0c3e136b2f701\app_CXX_unity_2_3.cxx.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Generating CXX unity source D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_2_3.cxx</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|Win32'">setlocal
+cd D:\ccode\coolq-cpp-sdk
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCOTIRE_BUILD_TYPE:STRING=release -P D:/ccode/coolq-cpp-sdk/cmake/Modules/cotire.cmake unity D:/ccode/coolq-cpp-sdk/build/release/app_CXX_cotire.cmake D:/ccode/coolq-cpp-sdk/build/release/$(Configuration)/cotire/app_CXX_unity_2_3.cxx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:/ccode/coolq-cpp-sdk/build/release/CMakeFiles/334e432425a45fbf58a0c3e136b2f701/app_CXX_unity_2_3.cxx.rule;D:\ccode\coolq-cpp-sdk\build\release\app_CXX_cotire.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_2_3.cxx</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\334e432425a45fbf58a0c3e136b2f701\app_CXX_unity_4_5.cxx.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Generating CXX unity source D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_4_5.cxx</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|Win32'">setlocal
+cd D:\ccode\coolq-cpp-sdk
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCOTIRE_BUILD_TYPE:STRING=release -P D:/ccode/coolq-cpp-sdk/cmake/Modules/cotire.cmake unity D:/ccode/coolq-cpp-sdk/build/release/app_CXX_cotire.cmake D:/ccode/coolq-cpp-sdk/build/release/$(Configuration)/cotire/app_CXX_unity_4_5.cxx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:/ccode/coolq-cpp-sdk/build/release/CMakeFiles/334e432425a45fbf58a0c3e136b2f701/app_CXX_unity_4_5.cxx.rule;D:\ccode\coolq-cpp-sdk\build\release\app_CXX_cotire.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_4_5.cxx</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\334e432425a45fbf58a0c3e136b2f701\app_CXX_unity_6_7.cxx.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Generating CXX unity source D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_6_7.cxx</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|Win32'">setlocal
+cd D:\ccode\coolq-cpp-sdk
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCOTIRE_BUILD_TYPE:STRING=release -P D:/ccode/coolq-cpp-sdk/cmake/Modules/cotire.cmake unity D:/ccode/coolq-cpp-sdk/build/release/app_CXX_cotire.cmake D:/ccode/coolq-cpp-sdk/build/release/$(Configuration)/cotire/app_CXX_unity_6_7.cxx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:/ccode/coolq-cpp-sdk/build/release/CMakeFiles/334e432425a45fbf58a0c3e136b2f701/app_CXX_unity_6_7.cxx.rule;D:\ccode\coolq-cpp-sdk\build\release\app_CXX_cotire.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_6_7.cxx</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\334e432425a45fbf58a0c3e136b2f701\app_CXX_unity_8_9.cxx.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Generating CXX unity source D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_8_9.cxx</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|Win32'">setlocal
+cd D:\ccode\coolq-cpp-sdk
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCOTIRE_BUILD_TYPE:STRING=release -P D:/ccode/coolq-cpp-sdk/cmake/Modules/cotire.cmake unity D:/ccode/coolq-cpp-sdk/build/release/app_CXX_cotire.cmake D:/ccode/coolq-cpp-sdk/build/release/$(Configuration)/cotire/app_CXX_unity_8_9.cxx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:/ccode/coolq-cpp-sdk/build/release/CMakeFiles/334e432425a45fbf58a0c3e136b2f701/app_CXX_unity_8_9.cxx.rule;D:\ccode\coolq-cpp-sdk\build\release\app_CXX_cotire.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_8_9.cxx</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Building Custom Rule D:/ccode/coolq-cpp-sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|Win32'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -HD:/ccode/coolq-cpp-sdk -BD:/ccode/coolq-cpp-sdk/build/release --check-stamp-file D:/ccode/coolq-cpp-sdk/build/release/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:/ccode/coolq-cpp-sdk/CMakeLists.txt;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.12\Modules\ProcessorCount.cmake;D:\ccode\coolq-cpp-sdk\CMakeLists.txt;D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\3.12.18081601-MSVC_2\CMakeCCompiler.cmake;D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\3.12.18081601-MSVC_2\CMakeCXXCompiler.cmake;D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\3.12.18081601-MSVC_2\CMakeRCCompiler.cmake;D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\3.12.18081601-MSVC_2\CMakeSystem.cmake;D:\ccode\coolq-cpp-sdk\cmake\Modules\FindVcpkgIncludeDir.cmake;D:\ccode\coolq-cpp-sdk\cmake\Modules\FixDebugLibraryLookup.cmake;D:\ccode\coolq-cpp-sdk\cmake\Modules\FixLinkConflict.cmake;D:\ccode\coolq-cpp-sdk\cmake\Modules\cotire.cmake;D:\ccode\coolq-cpp-sdk\vcpkg\installed\x86-windows-static-custom\share\unofficial-iconv\unofficial-iconv-config-debug.cmake;D:\ccode\coolq-cpp-sdk\vcpkg\installed\x86-windows-static-custom\share\unofficial-iconv\unofficial-iconv-config-release.cmake;D:\ccode\coolq-cpp-sdk\vcpkg\installed\x86-windows-static-custom\share\unofficial-iconv\unofficial-iconv-config.cmake;D:\ccode\coolq-cpp-sdk\vcpkg\scripts\buildsystems\vcpkg.cmake;D:\ccode\coolq-cpp-sdk\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_0_1.cxx">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='release|Win32'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_2_3.cxx">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='release|Win32'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_4_5.cxx">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='release|Win32'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_6_7.cxx">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='release|Win32'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="D:\ccode\coolq-cpp-sdk\build\release\$(Configuration)\cotire\app_CXX_unity_8_9.cxx">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='release|Win32'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\ccode\coolq-cpp-sdk\build\release\ZERO_CHECK.vcxproj">
+      <Project>{170DD80B-528B-3F5A-A5FD-D10630DB94AC}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

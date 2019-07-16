@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\debug\CMakeFiles\429d39cc3854f09c551b8152b508b8d8\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B4CBCA37-4890-3A5B-9D3C-8AAC2B6477BE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

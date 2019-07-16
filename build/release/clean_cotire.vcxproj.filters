@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\32025fd77077bcc27d1434dba2534543\clean_cotire.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\ccode\coolq-cpp-sdk\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\ccode\coolq-cpp-sdk\build\release\CMakeFiles\clean_cotire" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{16EB033A-982A-3045-9F9F-DE6951A0767C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

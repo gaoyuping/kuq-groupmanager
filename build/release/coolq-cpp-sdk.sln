@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{C5C48731-D39A-3D5B-A01E-323016EE0083}"
+	ProjectSection(ProjectDependencies) = postProject
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC} = {170DD80B-528B-3F5A-A5FD-D10630DB94AC}
+		{B645ED12-FF5C-3F23-85EF-633AF7EC743E} = {B645ED12-FF5C-3F23-85EF-633AF7EC743E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{170DD80B-528B-3F5A-A5FD-D10630DB94AC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "all_unity", "all_unity.vcxproj", "{4F21D6DC-FF67-3414-A00C-AF80D4FC35A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC} = {170DD80B-528B-3F5A-A5FD-D10630DB94AC}
+		{F3F045A9-9720-31DC-BDBC-205508DBEAF6} = {F3F045A9-9720-31DC-BDBC-205508DBEAF6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app", "app.vcxproj", "{B645ED12-FF5C-3F23-85EF-633AF7EC743E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC} = {170DD80B-528B-3F5A-A5FD-D10630DB94AC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app_unity", "app_unity.vcxproj", "{F3F045A9-9720-31DC-BDBC-205508DBEAF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC} = {170DD80B-528B-3F5A-A5FD-D10630DB94AC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clean_cotire", "clean_cotire.vcxproj", "{1D157C64-A28B-38FD-B33A-D37DC71BA0B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC} = {170DD80B-528B-3F5A-A5FD-D10630DB94AC}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		release|Win32 = release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5C48731-D39A-3D5B-A01E-323016EE0083}.release|Win32.ActiveCfg = release|Win32
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC}.release|Win32.ActiveCfg = release|Win32
+		{170DD80B-528B-3F5A-A5FD-D10630DB94AC}.release|Win32.Build.0 = release|Win32
+		{4F21D6DC-FF67-3414-A00C-AF80D4FC35A3}.release|Win32.ActiveCfg = release|Win32
+		{B645ED12-FF5C-3F23-85EF-633AF7EC743E}.release|Win32.ActiveCfg = release|Win32
+		{B645ED12-FF5C-3F23-85EF-633AF7EC743E}.release|Win32.Build.0 = release|Win32
+		{F3F045A9-9720-31DC-BDBC-205508DBEAF6}.release|Win32.ActiveCfg = release|Win32
+		{1D157C64-A28B-38FD-B33A-D37DC71BA0B8}.release|Win32.ActiveCfg = release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DEC4E0A-33E8-3FC3-9DE9-51E900DAE26A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
